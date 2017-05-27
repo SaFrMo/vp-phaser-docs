@@ -1,0 +1,347 @@
+[
+  {
+    "name": "alive",
+    "type": "boolean",
+    "description": "\n        A useful flag to control if the Game Object is alive or dead.\nThis is set automatically by the Health components damage method should the object run out of health.Or you can toggle it via your game code.\nThis property is mostly just provided to be used by your game - it doesn't effect rendering or logic updates.However you can use Group.getFirstAlive in conjunction with this property for fast object pooling and recycling.\n    "
+  },
+  {
+    "name": "anchor",
+    "type": "Point",
+    "description": "\n        The anchor sets the origin point of the texture.The default is 0,0 this means the texture's origin is the top leftSetting than anchor to 0.5,0.5 means the textures origin is centeredSetting the anchor to 1,1 would mean the textures origin points will be the bottom right corner\n    "
+  },
+  {
+    "name": "angle",
+    "type": "number",
+    "description": "\n        The angle property is the rotation of the Game Object in degrees from its original orientation.\nValues from 0 to 180 represent clockwise rotation; values from 0 to -180 represent counterclockwise rotation.\nValues outside this range are added to or subtracted from 360 to obtain a value within the range.For example, the statement player.angle = 450 is the same as player.angle = 90.\nIf you wish to work in radians instead of degrees you can use the property rotation instead.Working in radians is slightly faster as it doesn't have to perform any calculations.\n    "
+  },
+  {
+    "name": "animations",
+    "type": "Phaser.AnimationManager",
+    "description": "\n        If the Game Object is enabled for animation (such as a Phaser.Sprite) this is a reference to its AnimationManager instance.Through it you can create, play, pause and stop animations.\n    "
+  },
+  {
+    "name": "autoCull",
+    "type": "boolean",
+    "description": "\n        A Game Object with autoCull set to true will check its bounds against the World Camera every frame.If it is not intersecting the Camera bounds at any point then it has its renderable property set to false.This keeps the Game Object alive and still processing updates, but forces it to skip the render step entirely.\nThis is a relatively expensive operation, especially if enabled on hundreds of Game Objects. So enable it only if you know it's required,or you have tested performance and find it acceptable.\n    "
+  },
+  {
+    "name": "blendMode",
+    "type": "number",
+    "description": "\n        The blend mode to be applied to the sprite. Set to PIXI.blendModes.NORMAL to remove any blend mode.\nWarning: You cannot have a blend mode and a filter active on the same Sprite. Doing so will render the sprite invisible.\n    "
+  },
+  {
+    "name": "body",
+    "type": "Phaser.Physics.Arcade.Body | Phaser.Physics.P2.Body | Phaser.Physics.Ninja.Body | null",
+    "description": "\n        body is the Game Objects physics body. Once a Game Object is enabled for physics you access all associatedproperties and methods via it.\nBy default Game Objects won't add themselves to any physics system and their body property will be null.\nTo enable this Game Object for physics you need to call game.physics.enable(object, system) where object is this objectand system is the Physics system you are using. If none is given it defaults to Phaser.Physics.Arcade.\nYou can alternatively call game.physics.arcade.enable(object), or add this Game Object to a physics enabled Group.\nImportant: Enabling a Game Object for P2 or Ninja physics will automatically set its anchor property to 0.5,so the physics body is centered on the Game Object.\nIf you need a different result then adjust or re-create the Body shape offsets manually or reset the anchor after enabling physics.\n    "
+  },
+  {
+    "name": "bottom",
+    "type": "number",
+    "description": "\n        The sum of the y and height properties.This is the same as y + height - offsetY.\n    "
+  },
+  {
+    "name": "cameraOffset",
+    "type": "Phaser.Point",
+    "description": "\n        The x/y coordinate offset applied to the top-left of the camera that this Game Object will be drawn at if fixedToCamera is true.\nThe values are relative to the top-left of the camera view and in addition to any parent of the Game Object on the display list.\n    "
+  },
+  {
+    "name": "centerX",
+    "type": "number",
+    "description": "\n        The center x coordinate of the Game Object.This is the same as (x - offsetX) + (width / 2).\n    "
+  },
+  {
+    "name": "centerY",
+    "type": "number",
+    "description": "\n        The center y coordinate of the Game Object.This is the same as (y - offsetY) + (height / 2).\n    "
+  },
+  {
+    "name": "checkWorldBounds",
+    "type": "boolean",
+    "description": "\n        If this is set to true the Game Object checks if it is within the World bounds each frame. \nWhen it is no longer intersecting the world bounds it dispatches the onOutOfBounds event.\nIf it was previously out of bounds but is now intersecting the world bounds again it dispatches the onEnterBounds event.\nIt also optionally kills the Game Object if outOfBoundsKill is true.\nWhen checkWorldBounds is enabled it forces the Game Object to calculate its full bounds every frame.\nThis is a relatively expensive operation, especially if enabled on hundreds of Game Objects. So enable it only if you know it's required,or you have tested performance and find it acceptable.\n    "
+  },
+  {
+    "name": "children",
+    "type": "Array.<DisplayObject>",
+    "description": "\n        [read-only] The array of children of this container.\n    "
+  },
+  {
+    "name": "components",
+    "type": "Object",
+    "description": "\n        The components this Game Object has installed.\n    "
+  },
+  {
+    "name": "cropRect",
+    "type": "Phaser.Rectangle",
+    "description": "\n        The Rectangle used to crop the texture this Game Object uses.Set this property via crop.If you modify this property directly you must call updateCrop in order to have the change take effect.\n    "
+  },
+  {
+    "name": "damage",
+    "type": "",
+    "description": "\n        Damages the Game Object. This removes the given amount of health from the health property.\nIf health is taken below or is equal to zero then the kill method is called.\n    "
+  },
+  {
+    "name": "data",
+    "type": "Object",
+    "description": "\n        An empty Object that belongs to this Game Object.This value isn't ever used internally by Phaser, but may be used by your own code, orby Phaser Plugins, to store data that needs to be associated with the Game Object,without polluting the Game Object directly.\n    "
+  },
+  {
+    "name": "debug",
+    "type": "boolean",
+    "description": "\n        A debug flag designed for use with Game.enableStep.\n    "
+  },
+  {
+    "name": "deltaX",
+    "type": "number",
+    "description": "\n        Returns the delta x value. The difference between world.x now and in the previous frame.\nThe value will be positive if the Game Object has moved to the right or negative if to the left.\n    "
+  },
+  {
+    "name": "deltaY",
+    "type": "number",
+    "description": "\n        Returns the delta y value. The difference between world.y now and in the previous frame.\nThe value will be positive if the Game Object has moved down or negative if up.\n    "
+  },
+  {
+    "name": "deltaZ",
+    "type": "number",
+    "description": "\n        Returns the delta z value. The difference between rotation now and in the previous frame. The delta value.\n    "
+  },
+  {
+    "name": "destroyPhase",
+    "type": "boolean",
+    "description": "\n        As a Game Object runs through its destroy method this flag is set to true,and can be checked in any sub-systems or plugins it is being destroyed from.\n    "
+  },
+  {
+    "name": "events",
+    "type": "Phaser.Events",
+    "description": "\n        All Phaser Game Objects have an Events class which contains all of the events that are dispatched when certain things happen to thisGame Object, or any of its components.\n    "
+  },
+  {
+    "name": "exists",
+    "type": "boolean",
+    "description": "\n        Controls if this Sprite is processed by the core Phaser game loops and Group loops.\n    "
+  },
+  {
+    "name": "fixedToCamera",
+    "type": "boolean",
+    "description": "\n        A Game Object that is \"fixed\" to the camera uses its x/y coordinates as offsets from the top left of the camera during rendering.\nThe values are adjusted at the rendering stage, overriding the Game Objects actual world position.\nThe end result is that the Game Object will appear to be 'fixed' to the camera, regardless of where in the game worldthe camera is viewing. This is useful if for example this Game Object is a UI item that you wish to be visible at all timesregardless where in the world the camera is.\nThe offsets are stored in the cameraOffset property.\nNote that the cameraOffset values are in addition to any parent of this Game Object on the display list.\nBe careful not to set fixedToCamera on Game Objects which are in Groups that already have fixedToCamera enabled on them.\n    "
+  },
+  {
+    "name": "frame",
+    "type": "integer",
+    "description": "\n        Gets or sets the current frame index of the texture being used to render this Game Object.\nTo change the frame set frame to the index of the new frame in the sprite sheet you wish this Game Object to use,for example: player.frame = 4.\nIf the frame index given doesn't exist it will revert to the first frame found in the texture.\nIf you are using a texture atlas then you should use the frameName property instead.\nIf you wish to fully replace the texture being used see loadTexture.\n    "
+  },
+  {
+    "name": "frameName",
+    "type": "string",
+    "description": "\n        Gets or sets the current frame name of the texture being used to render this Game Object.\nTo change the frame set frameName to the name of the new frame in the texture atlas you wish this Game Object to use,for example: player.frameName = \"idle\".\nIf the frame name given doesn't exist it will revert to the first frame found in the texture and throw a console warning.\nIf you are using a sprite sheet then you should use the frame property instead.\nIf you wish to fully replace the texture being used see loadTexture.\n    "
+  },
+  {
+    "name": "fresh",
+    "type": "boolean",
+    "description": "\n        A Game Object is considered fresh if it has just been created or reset and is yet to receive a renderer transform update.This property is mostly used internally by the physics systems, but is exposed for the use of plugins.\n    "
+  },
+  {
+    "name": "game",
+    "type": "Phaser.Game",
+    "description": "\n        A reference to the currently running Game.\n    "
+  },
+  {
+    "name": "heal",
+    "type": "",
+    "description": "\n        Heal the Game Object. This adds the given amount of health to the health property.\n    "
+  },
+  {
+    "name": "health",
+    "type": "number",
+    "description": "\n        The Game Objects health value. This is a handy property for setting and manipulating health on a Game Object.\nIt can be used in combination with the damage method or modified directly.\n    "
+  },
+  {
+    "name": "height",
+    "type": "number",
+    "description": "\n        The height of the sprite, setting this will actually modify the scale to achieve the value set\n    "
+  },
+  {
+    "name": "ignoreChildInput",
+    "type": "boolean",
+    "description": "\n        If ignoreChildInput  is false it will allow this objects children to be considered as valid for Input events.\nIf this property is true then the children will not be considered as valid for Input events.\nNote that this property isn't recursive: only immediate children are influenced, it doesn't scan further down.\n    "
+  },
+  {
+    "name": "inCamera",
+    "type": "boolean",
+    "description": "\n        Checks if the Game Objects bounds intersect with the Game Camera bounds.Returns true if they do, otherwise false if fully outside of the Cameras bounds.\n    "
+  },
+  {
+    "name": "input",
+    "type": "Phaser.InputHandler | null",
+    "description": "\n        The Input Handler for this Game Object.\nBy default it is disabled. If you wish this Game Object to process input events you should enable it with: inputEnabled = true.\nAfter you have done this, this property will be a reference to the Phaser InputHandler.\n    "
+  },
+  {
+    "name": "inputEnabled",
+    "type": "boolean",
+    "description": "\n        By default a Game Object won't process any input events. By setting inputEnabled to true a Phaser.InputHandler is createdfor this Game Object and it will then start to process click / touch events and more.\nYou can then access the Input Handler via this.input.\nNote that Input related events are dispatched from this.events, i.e.: events.onInputDown.\nIf you set this property to false it will stop the Input Handler from processing any more input events.\nIf you want to temporarily disable input for a Game Object, then it's better to setinput.enabled = false, as it won't reset any of the Input Handlers internal properties.You can then toggle this back on as needed.\n    "
+  },
+  {
+    "name": "inWorld",
+    "type": "boolean",
+    "description": "\n        Checks if the Game Objects bounds are within, or intersect at any point with the Game World bounds.\n    "
+  },
+  {
+    "name": "key",
+    "type": "string | Phaser.RenderTexture | Phaser.BitmapData | Phaser.Video | PIXI.Texture",
+    "description": "\n        The key of the image or texture used by this Game Object during rendering.If it is a string it's the string used to retrieve the texture from the Phaser Image Cache.It can also be an instance of a RenderTexture, BitmapData, Video or PIXI.Texture.If a Game Object is created without a key it is automatically assigned the key __default which is a 32x32 transparent PNG stored within the Cache.If a Game Object is given a key which doesn't exist in the Image Cache it is re-assigned the key __missing which is a 32x32 PNG of a green box with a line through it.\n    "
+  },
+  {
+    "name": "left",
+    "type": "number",
+    "description": "\n        The left coordinate of the Game Object.This is the same as x - offsetX.\n    "
+  },
+  {
+    "name": "lifespan",
+    "type": "number",
+    "description": "\n        The lifespan allows you to give a Game Object a lifespan in milliseconds.\nOnce the Game Object is 'born' you can set this to a positive value.\nIt is automatically decremented by the millisecond equivalent of game.time.physicsElapsed each frame.When it reaches zero it will call the kill method.\nVery handy for particles, bullets, collectibles, or any other short-lived entity.\n    "
+  },
+  {
+    "name": "maxHealth",
+    "type": "number",
+    "description": "\n        The Game Objects maximum health value. This works in combination with the heal method to ensurethe health value never exceeds the maximum.\n    "
+  },
+  {
+    "name": "name",
+    "type": "string",
+    "description": "\n        A user defined name given to this Game Object.This value isn't ever used internally by Phaser, it is meant as a game level property.\n    "
+  },
+  {
+    "name": "offsetX",
+    "type": "number",
+    "description": "\n        The amount the Game Object is visually offset from its x coordinate.This is the same as width * anchor.x.It will only be > 0 if anchor.x is not equal to zero.\n    "
+  },
+  {
+    "name": "offsetY",
+    "type": "number",
+    "description": "\n        The amount the Game Object is visually offset from its y coordinate.This is the same as height * anchor.y.It will only be > 0 if anchor.y is not equal to zero.\n    "
+  },
+  {
+    "name": "outOfBoundsKill",
+    "type": "boolean",
+    "description": "\n        If this and the checkWorldBounds property are both set to true then the kill method is called as soon as inWorld returns false.\n    "
+  },
+  {
+    "name": "outOfCameraBoundsKill",
+    "type": "boolean",
+    "description": "\n        If this and the autoCull property are both set to true, then the kill methodis called as soon as the Game Object leaves the camera bounds.\n    "
+  },
+  {
+    "name": "pendingDestroy",
+    "type": "boolean",
+    "description": "\n        A Game Object is that is pendingDestroy is flagged to have its destroy method called on the next logic update.You can set it directly to allow you to flag an object to be destroyed on its next update.\nThis is extremely useful if you wish to destroy an object from within one of its own callbackssuch as with Buttons or other Input events.\n    "
+  },
+  {
+    "name": "physicsType",
+    "type": "number",
+    "description": "\n        The const physics body type of this object.\n    "
+  },
+  {
+    "name": "previousPosition",
+    "type": "Phaser.Point",
+    "description": "\n        The position the Game Object was located in the previous frame.\n    "
+  },
+  {
+    "name": "previousRotation",
+    "type": "number",
+    "description": "\n        The rotation the Game Object was in set to in the previous frame. Value is in radians.\n    "
+  },
+  {
+    "name": "renderOrderID",
+    "type": "number",
+    "description": "\n        The render order ID is used internally by the renderer and Input Manager and should not be modified.This property is mostly used internally by the renderers, but is exposed for the use of plugins.\n    "
+  },
+  {
+    "name": "right",
+    "type": "number",
+    "description": "\n        The right coordinate of the Game Object.This is the same as x + width - offsetX.\n    "
+  },
+  {
+    "name": "scaleMax",
+    "type": "Phaser.Point",
+    "description": "\n        The maximum scale this Game Object will scale up to. \nIt allows you to prevent a parent from scaling this Game Object higher than the given value.\nSet it to null to remove the limit.\n    "
+  },
+  {
+    "name": "scaleMin",
+    "type": "Phaser.Point",
+    "description": "\n        The minimum scale this Game Object will scale down to.\nIt allows you to prevent a parent from scaling this Game Object lower than the given value.\nSet it to null to remove the limit.\n    "
+  },
+  {
+    "name": "setHealth",
+    "type": "",
+    "description": "\n        Sets the health property of the Game Object to the given amount.Will never exceed the maxHealth value.\n    "
+  },
+  {
+    "name": "shader",
+    "type": "PIXI.AbstractFilter",
+    "description": "\n        The shader that will be used to render this Sprite.Set to null to remove a current shader.\n    "
+  },
+  {
+    "name": "smoothed",
+    "type": "boolean",
+    "description": "\n        Enable or disable texture smoothing for this Game Object.\nIt only takes effect if the Game Object is using an image based texture.\nSmoothing is enabled by default.\n    "
+  },
+  {
+    "name": "texture",
+    "type": "PIXI.Texture",
+    "description": "\n        The texture that the sprite is using\n    "
+  },
+  {
+    "name": "tint",
+    "type": "number",
+    "description": "\n        The tint applied to the sprite. This is a hex value. A value of 0xFFFFFF will remove any tint effect.\n    "
+  },
+  {
+    "name": "tintedTexture",
+    "type": "Canvas",
+    "description": "\n        A canvas that contains the tinted version of the Sprite (in Canvas mode, WebGL doesn't populate this)\n    "
+  },
+  {
+    "name": "top",
+    "type": "number",
+    "description": "\n        The y coordinate of the Game Object.This is the same as y - offsetY.\n    "
+  },
+  {
+    "name": "transformCallback",
+    "type": "Function",
+    "description": "\n        The callback that will apply any scale limiting to the worldTransform.\n    "
+  },
+  {
+    "name": "transformCallbackContext",
+    "type": "Object",
+    "description": "\n        The context under which transformCallback is called.\n    "
+  },
+  {
+    "name": "type",
+    "type": "number",
+    "description": "\n        The const type of this object.\n    "
+  },
+  {
+    "name": "width",
+    "type": "number",
+    "description": "\n        The width of the sprite, setting this will actually modify the scale to achieve the value set\n    "
+  },
+  {
+    "name": "world",
+    "type": "Phaser.Point",
+    "description": "\n        The world coordinates of this Game Object in pixels.Depending on where in the display list this Game Object is placed this value can differ from position,which contains the x/y coordinates relative to the Game Objects parent.\n    "
+  },
+  {
+    "name": "x",
+    "type": "number",
+    "description": "\n        The position of the Game Object on the x axis relative to the local coordinates of the parent.\n    "
+  },
+  {
+    "name": "y",
+    "type": "number",
+    "description": "\n        The position of the Game Object on the y axis relative to the local coordinates of the parent.\n    "
+  },
+  {
+    "name": "z",
+    "type": "number",
+    "description": "\n        The z depth of this Game Object within its parent Group.No two objects in a Group can have the same z value.This value is adjusted automatically whenever the Group hierarchy changes.If you wish to re-order the layering of a Game Object then see methods like Group.moveUp or Group.bringToTop.\n    "
+  }
+]
